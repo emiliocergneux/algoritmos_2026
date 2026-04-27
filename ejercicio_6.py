@@ -3,5 +3,5 @@ def inver(texto):
         return texto
     return inver(texto[1:]) + texto[0]
 
-cadena = "ejercicio"
+cadena = "ejercicio" 
 print(inver(cadena))
