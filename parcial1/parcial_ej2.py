@@ -124,7 +124,7 @@ def modificar_nombre_real(superheroes, nombre_buscar, nuevo_nombre):
     for heroe in superheroes:
         if heroe["name"].lower() == nombre_buscar.lower():
             heroe["real_name"] = nuevo_nombre
-            print(f"\n=== 8. MODIFICACIÓN REALIZADA ===")
+            print(f"MODIFICACIÓN REALIZADA")
             print(f"Se modificó {nombre_buscar} a: {nuevo_nombre}")
             return True
     print(f"\n=== 8. ERROR ===")
