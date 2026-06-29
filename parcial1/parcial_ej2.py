@@ -20,7 +20,7 @@ def listar_por_nombre(superheroes):
     lista.sort_by_criterion("name")
     return lista
 
-print("=== 1. PERSONAJES ORDENADOS POR NOMBRE ===")
+print("PERSONAJES ORDENADOS POR NOMBRE")
 lista_nombres = listar_por_nombre(superheroes)
 for h in lista_nombres:
     print(h["name"])
@@ -30,7 +30,7 @@ def encontrar_posicion(lista, nombre):
     lista.add_criterion("name", by_name)
     return lista.search(nombre.lower(), "name")
 
-print("\n=== 2. POSICIÓN DE THE THING Y ROCKET RACCOON ===")
+print("POSICIÓN DE THE THING Y ROCKET RACCOON")
 pos_thing  = encontrar_posicion(lista_nombres, "The Thing")
 pos_rocket = encontrar_posicion(lista_nombres, "Rocket Raccoon")
 print(f"The Thing está en la posición: {pos_thing}")
@@ -46,7 +46,7 @@ def listar_villanos(superheroes):
     lista.sort_by_criterion("name")
     return lista
 
-print("\n=== 3. LISTA DE VILLANOS ===")
+print("LISTA DE VILLANOS")
 lista_villanos = listar_villanos(superheroes)
 for v in lista_villanos:
     print(v["name"])
@@ -58,7 +58,7 @@ def villanos_en_cola(superheroes):
         if heroe["is_villain"]:
             cola.arrive(heroe)
 
-    print("\n=== 4. VILLANOS QUE APARECIERON ANTES DE 1980 ===")
+    print("VILLANOS QUE APARECIERON ANTES DE 1980")
 
     total = cola.size()
     for _ in range(total):
@@ -84,7 +84,7 @@ def listar_por_inicial(superheroes, iniciales):
     lista.sort_by_criterion("name")
     return lista
 
-print("\n=== 5. SUPERHÉROES QUE COMIENZAN CON Bl, G, My, W ===")
+print("SUPERHÉROES QUE COMIENZAN CON Bl, G, My, W")
 iniciales = ["Bl", "G", "My", "W"]
 lista_iniciales = listar_por_inicial(superheroes, iniciales)
 for h in lista_iniciales:
@@ -99,7 +99,7 @@ def listar_por_nombre_real(superheroes):
     lista.sort_by_criterion("real_name")
     return lista
 
-print("\n=== 6. PERSONAJES ORDENADOS POR NOMBRE REAL ===")
+print("PERSONAJES ORDENADOS POR NOMBRE REAL")
 lista_real = listar_por_nombre_real(superheroes)
 for h in lista_real:
     print(f"{h['real_name'] or 'Desconocido'} -> {h['name']}")
@@ -112,9 +112,8 @@ def listar_por_anio(superheroes):
         pila.push(heroe)
     return pila
 
-print("\n=== 7. SUPERHÉROES ORDENADOS POR FECHA DE APARICIÓN ===")
+print("SUPERHÉROES ORDENADOS POR FECHA DE APARICIÓN")
 pila_anios = listar_por_anio(superheroes)
-# show() imprime desde el tope (más antiguo) hacia abajo
 total_pila = pila_anios.size()
 for _ in range(total_pila):
     h = pila_anios.pop()
@@ -134,7 +133,7 @@ def modificar_nombre_real(superheroes, nombre_buscar, nuevo_nombre):
 
 modificar_nombre_real(superheroes, "Ant Man", "Scott Lang")
 
-print("\nVerificando cambio:")
+print("Verificando cambio:")
 for heroe in superheroes:
     if heroe["name"] == "Ant Man":
         print(f"Ant Man ahora es: {heroe['real_name']}")
@@ -152,7 +151,7 @@ def buscar_en_biografia(superheroes, palabras):
     lista.sort_by_criterion("name")
     return lista
 
-print("\n=== 9. PERSONAJES CON 'time-traveling' O 'suit' EN BIOGRAFÍA ===")
+print("PERSONAJES CON 'time-traveling' O 'suit' EN BIOGRAFÍA")
 palabras_buscar = ["time-traveling", "suit"]
 lista_bio = buscar_en_biografia(superheroes, palabras_buscar)
 for h in lista_bio:
@@ -169,7 +168,7 @@ def eliminar_personajes(superheroes, nombres_a_eliminar):
             i += 1
     return eliminados
 
-print("\n=== 10. ELIMINACIÓN DE ELECTRO Y BARON ZEMO ===")
+print("ELIMINACIÓN DE ELECTRO Y BARON ZEMO")
 nombres_eliminar = ["Electro", "Baron Zemo"]
 eliminados = eliminar_personajes(superheroes, nombres_eliminar)
 
@@ -188,7 +187,7 @@ else:
 
 
 def verificar_estructuras():
-    print("\n=== VERIFICACIÓN FINAL ===")
+    print("VERIFICACIÓN FINAL")
     print(f"Total de personajes restantes: {len(superheroes)}")
     print(f"Cantidad de villanos en cola: {cola_villanos.size()}")
     print(f"Cantidad de villanos listados: {lista_villanos.size()}")
