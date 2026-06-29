@@ -62,10 +62,10 @@ def villanos_en_cola(superheroes):
 
     total = cola.size()
     for _ in range(total):
-        villano = cola.attention()          # sale por el frente (FIFO)
+        villano = cola.attention()
         if villano["first_appearance"] < 1980:
             print(f"{villano['name']} - {villano['first_appearance']}")
-        cola.arrive(villano)               # lo reinserta al final
+        cola.arrive(villano) 
 
     return cola
 
@@ -127,7 +127,7 @@ def modificar_nombre_real(superheroes, nombre_buscar, nuevo_nombre):
             print(f"MODIFICACIÓN REALIZADA")
             print(f"Se modificó {nombre_buscar} a: {nuevo_nombre}")
             return True
-    print(f"\n=== 8. ERROR ===")
+    print(f"ERROR")
     print(f"No se encontró a {nombre_buscar}")
     return False
 
@@ -175,7 +175,7 @@ eliminados = eliminar_personajes(superheroes, nombres_eliminar)
 if eliminados:
     print("Personajes eliminados:")
     for personaje in eliminados:
-        print(f"\nNombre: {personaje['name']}")
+        print(f"Nombre: {personaje['name']}")
         print(f"Alias: {personaje['alias']}")
         print(f"Nombre real: {personaje['real_name']}")
         print(f"Biografía: {personaje['short_bio']}")
